@@ -3,11 +3,11 @@ import Link from "next/link";
 
 function Sidebar() {
     return (
-      <div className="bg-slate-800 space-y-6 w-52">
+      <div className="bg-slate-700 space-y-6 w-60 h-screen text-slate-50 p-3 fixed left-0 top-0">
 
-          <Link href="#"> Logo </Link>
+          <Link href="#" className='mb-6'> Logo </Link>
 
-          <div className='space-y-3'>
+          <div className='space-y-3 flex flex-col'>
               <Link href="#">Dashboard</Link>
               <Link href="#"> Catalogue</Link>
               <Link href="#"> Customers</Link>
