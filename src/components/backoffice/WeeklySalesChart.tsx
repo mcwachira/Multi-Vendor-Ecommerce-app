@@ -111,9 +111,10 @@ function WeeklySalesChart() {
                             return (
                                 <li className="me-2" key={i}>
                                     <button
+                                        onClick={() => setChartToDisplay(tab.type)}
                                         className={chartToDisplay== tab.type? "inline-block p-4 border-b-2 border-orange-600 rounded-t-lg text-orange-600 active dark:text-orange-500 dark:border-orange-500 dark:hover:text-gray-300":"inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"}>
 
-                                        {tabs.title}
+                                        {tab.title}
                                     </button>
                                 </li>
 
