@@ -29,14 +29,10 @@ const config: Config = {
       light: "#f8fafc",
     },
     extend: {
-      // fontFamily: {
-      //   sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
-      //   display: ['var(--font-lexend)', ...defaultTheme.fontFamily.sans],
-      //   writing: ['var(--font-gochi-hand)', ...defaultTheme.fontFamily.sans],
-      // },
-      height: {
-        128: "32rem",
-        256: "72rem",
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
 
       gridTemplateColumns: {

@@ -37,7 +37,7 @@ import {ThemeToggle} from "@/components/ui/theme-toggle";
 
 function Navbar() {
     return (
-        <div className='w-full flex items-center justify-between bg-light text-light dark:bg-dark dark:text-dark  h-20 px-8 py-4  fixed top-0 z-50 pr-[5rem] '>
+        <div className='flex items-center justify-between bg-slate-800 text-slate-50 h-16 px-8 py-4  fixed top-0 ml-60 w-full'>
 
             <button>
                 <AlignJustify/>
