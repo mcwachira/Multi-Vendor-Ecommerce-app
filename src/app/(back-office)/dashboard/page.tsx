@@ -7,7 +7,7 @@ import CustomDataTable from "@/components/backoffice/CustomDataTable";
 
 function Dashboard() {
     return (
-        <div>
+        <div className=' bg-light text-light  dark:bg-dark  dark:text-dark'>
 
             <Heading title="Dashboard Overview"/>
             
