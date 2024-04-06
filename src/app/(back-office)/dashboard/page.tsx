@@ -7,7 +7,7 @@ import CustomDataTable from "@/components/backoffice/CustomDataTable";
 
 function Page() {
     return (
-        <div className=' '>
+        <div className='ml-60 '>
 
             <Heading title="Dashboard Overview"/>
             

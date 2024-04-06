@@ -25,7 +25,7 @@ const config: Config = {
       "9xl": ["8rem", { lineHeight: "1" }],
     },
     colors: {
-      dark: "#0f172a",
+      dark: "#0b1d49",
       light: "#f8fafc",
     },
     extend: {
@@ -57,12 +57,12 @@ const config: Config = {
     },
   },
 
-  // plugins: [
-  //   require("@tailwindcss/typography"),
-  //   require("@tailwindcss/aspect-ratio"),
-  //   require("@tailwindcss/forms"),
-  //
-  //   // ...
-  // ],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/forms"),
+
+    // ...
+  ],
 };
 export default config;

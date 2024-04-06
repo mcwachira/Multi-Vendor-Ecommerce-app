@@ -1,6 +1,7 @@
 import React from 'react';
 import {AlignJustify, Bell, Layout, Sun, X} from "lucide-react";
 import Image from "next/image";
+import profileImage from '../../assets/avatar.png'
 import {
     Cloud,
     CreditCard,
@@ -71,7 +72,7 @@ function Navbar({setShowSidebar,showSidebar}) {
 
                                     <div className="flex items-center space-x-2">
                                         <Image
-                                            src="/assets/'avatar.png" alt="User Profile "
+                                            src={profileImage}  alt="User Profile "
                                         width={200}
                                         height={200}
                                         className="w-8 h-8 rounded-full"
@@ -104,7 +105,7 @@ function Navbar({setShowSidebar,showSidebar}) {
 
                                 <div className="flex items-center space-x-2">
                                     <Image
-                                        src="/assets/'avatar.png" alt="User Profile "
+                                        src={profileImage}  alt="User Profile "
                                         width={200}
                                         height={200}
                                         className="w-8 h-8 rounded-full"
@@ -137,7 +138,7 @@ function Navbar({setShowSidebar,showSidebar}) {
 
                                 <div className="flex items-center space-x-2">
                                     <Image
-                                        src="/assets/'avatar.png" alt="User Profile "
+                                        src={profileImage}  alt="User Profile "
                                         width={200}
                                         height={200}
                                         className="w-8 h-8 rounded-full"
@@ -171,7 +172,7 @@ function Navbar({setShowSidebar,showSidebar}) {
                     <DropdownMenu>
                         <DropdownMenuTrigger>
                             <button>
-                                <Image src="/assets/avatar.png" width={200} height={200} alt="User Profile"
+                                <Image   src={profileImage}  alt="User Profile" width={200} height={200}
                                        className="w-8 h-8 rounded-full"/>
                             </button>
                         </DropdownMenuTrigger>

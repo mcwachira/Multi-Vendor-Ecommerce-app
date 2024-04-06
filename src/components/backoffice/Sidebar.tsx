@@ -2,8 +2,8 @@
 import React, {useState} from 'react';
 import Link from "next/link";
 import {
-    Boxes, ChevronDown,
-    ChevronRight,
+    Boxes, Building2, ChevronDown,
+    ChevronRight, CircleDollarSign,
     ExternalLink,
     LayoutGrid, LayoutList, LogOut, MonitorPlay, ScanSearch, SendToBack,
     Slack,
@@ -56,6 +56,16 @@ function Sidebar({setShowSidebar,showSidebar}) {
             href:"/dashboard/customers"
         },
         {
+            title:'Ample Community ',
+            icon:Building2,
+            href:"/dashboard/community"
+        },
+        {
+            title:' Wallet',
+            icon:CircleDollarSign,
+            href:"/dashboard/wallet"
+        },
+        {
             title:'Settings',
             icon:LayoutGrid,
             href:"/dashboard/settings"
@@ -96,85 +106,85 @@ function Sidebar({setShowSidebar,showSidebar}) {
 
     ]
     return (
-      <div className={showSidebar? "sm:block sm:mt-0  mt-20 bg-light text-light dark:bg-dark dark:text-dark space-y-6 w-64 h-screen  p-3 fixed left-0 top-0 shadow-md":" hidden sm:mt-0  mt-20 sm:block bg-light text-light dark:bg-dark dark:text-dark space-y-6 w-64 h-screen  p-3 fixed left-0 top-0 shadow-md"}>
+        <div className={showSidebar? "sm:block sm:mt-0  mt-20 bg-light text-light dark:bg-dark dark:text-dark space-y-6 w-60 h-screen  p-3 fixed left-0 top-0 shadow-md":" hidden sm:mt-0  mt-20 sm:block bg-light text-light dark:bg-dark dark:text-dark space-y-6 w-60 h-screen  p-3 fixed left-0 top-0 shadow-md"}>
 
-          <Link href="#" className='px-6 py-4'               onClick={() => setShowSidebar(false)}> Logo </Link>
+            <Link href="#" className='px-6 py-4'               onClick={() => setShowSidebar(false)}> Logo </Link>
 
-          <div className='space-y-3 mt-14 flex flex-col'>
-              <Link href="/dashboard"          className={ pathname==="dashboard" ? "flex items-center space-x-3 px-6  py-2 border-1-4 border-green-600":"flex items-center space-x-3 px-6  py-2"}>
-                  <LayoutGrid/>
-                  <span>
+            <div className='space-y-3 mt-14 flex flex-col'>
+                <Link href="/dashboard"          className={ pathname==="dashboard" ? "flex items-center space-x-3 px-6  py-2 border-1-4 border-green-600":"flex items-center space-x-3 px-6  py-2"}>
+                    <LayoutGrid/>
+                    <span>
                       Dashboard
                   </span>
                 </Link>
 
 
-              <Collapsible>
-                  <CollapsibleTrigger onClick={() => setOpenMenu(!openMenu)}>
-                      <button className="flex items-center space-x-6 px-6 py-2">
-                          <div className="flex items-center space-x-3 ">
-                              <Slack/>
-                              <span>
+                <Collapsible>
+                    <CollapsibleTrigger onClick={() => setOpenMenu(!openMenu)}>
+                        <button className="flex items-center space-x-6 px-6 py-2">
+                            <div className="flex items-center space-x-3 ">
+                                <Slack/>
+                                <span>
 
                       Catalogue
                   </span>
-                              {openMenu ? <ChevronDown/>: <ChevronRight/>}
-                          </div>
+                                {openMenu ? <ChevronDown/>: <ChevronRight/>}
+                            </div>
 
-                      </button>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent  className='rounded-xl py-3 px-3 pl-6 bg-slate-50  dark:bg-slate-800'>
-                      {catalogueLinks.map((item, i) => {
-                          return (
-                              <Link href={item.href}
-                                    key={i}
-                                    onClick={() => setShowSidebar(false)}
-                                    className={ pathname===item.href ? "flex items-center space-x-3 px-6 text-green-500  py-2 border-1-4 border-green-600":"flex items-center space-x-3 px-6  py-2"}>
-                                  <LayoutGrid/>
-                                  <span>
+                        </button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent  className='rounded-xl py-3 px-3 pl-6 bg-slate-50  dark:bg-slate-800'>
+                        {catalogueLinks.map((item, i) => {
+                            return (
+                                <Link href={item.href}
+                                      key={i}
+                                      onClick={() => setShowSidebar(false)}
+                                      className={ pathname===item.href ? "flex items-center space-x-3 px-6 text-green-500  py-2 border-1-4 border-green-600":"flex items-center space-x-3 px-6  py-2"}>
+                                    <LayoutGrid/>
+                                    <span>
                 {item.title}
                   </span>
-                              </Link>
+                                </Link>
 
-                          )
-                      })}
+                            )
+                        })}
 
-                  </CollapsibleContent>
-              </Collapsible>
-
-
+                    </CollapsibleContent>
+                </Collapsible>
 
 
-              {sidebarLinks.map((item, i) => {
-                      const Icon = item.icon
 
-return (
-                  <Link href={item.href}
-                        onClick={() => setShowSidebar(false)}
-                        key={i}
-                        className={item.href === pathname ? "flex items-center space-x-3 px-6  py-2 border-1-4 border-green-600":"flex items-center space-x-3 px-6  py-2"}>
-                      <Icon/>
-                      <span>
+
+                {sidebarLinks.map((item, i) => {
+                        const Icon = item.icon
+
+                        return (
+                            <Link href={item.href}
+                                  onClick={() => setShowSidebar(false)}
+                                  key={i}
+                                  className={item.href === pathname ? "flex items-center space-x-3 px-6  py-2 border-1-4 border-green-600":"flex items-center space-x-3 px-6  py-2"}>
+                                <Icon/>
+                                <span>
 
                         {item.title}
                   </span>
-                  </Link>
-)
-                  }
-              )}
+                            </Link>
+                        )
+                    }
+                )}
 
-              <div className="px-6 py-2">
-                  <button className="bg-green-600 rounded-lg flex items-center space-x-3 px-6 py-2 ">
-                      <LogOut/>
-                      <span>
+                <div className="px-6 py-2">
+                    <button className="bg-green-600 rounded-lg flex items-center space-x-3 px-6 py-2 ">
+                        <LogOut/>
+                        <span>
                       Log Out
                   </span>
-                  </button>
-              </div>
+                    </button>
+                </div>
 
-          </div>
+            </div>
 
-      </div>
+        </div>
     );
 }
 

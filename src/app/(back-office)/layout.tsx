@@ -25,10 +25,10 @@ export default function Layout({
    {/*sidebar*/}
 <Sidebar showSidebar={showSidebar}  setShowSidebar={setShowSidebar} />
 
-     <div className='flex-grow bg-light text-light dark:bg-dark dark:text-dark  min-h-screen'>
+     <div className='lg:ml-64 ml-0 flex-grow  min-h-screen bg-light text-light dark:bg-dark dark:text-dark'>
      <Navbar setShowSidebar={setShowSidebar} showSidebar={showSidebar}/>
 
-         <main className="p-8 bg-light text-light dark:bg-dark dark:text-dark  min-h-screen mt-16  ">
+         <main className="p-8 bg-slate-50 text-light dark:bg-slate-800 dark:text-dark min-h-screen mt-16  ml-60">
              {children}
          </main>
      </div>
