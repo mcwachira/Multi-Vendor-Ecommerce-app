@@ -35,11 +35,16 @@ import {
 } from "@/components/ui/dropdown-menu"
 import {ThemeToggle} from "@/components/ui/theme-toggle";
 
-function Navbar() {
-    return (
-        <div className='flex items-center justify-between bg-slate-800 text-slate-50 h-16 px-8 py-4  fixed top-0 ml-60 w-full'>
+interface NavbarProps {
+    // showSidebar:boolean,
+    // setShowSidebar:() => {}
+}
 
-            <button>
+function Navbar({setShowSidebar,showSidebar}) {
+    return (
+        <div className='flex items-center justify-between bg-light text-light dark:bg-dark dark:text-dark h-16 px-8 py-4  fixed top-0 ml-60 w-full shadow-md sm:pr-[20rem]'>
+
+            <button onClick={() => setShowSidebar(!showSidebar)}>
                 <AlignJustify/>
             </button>
 

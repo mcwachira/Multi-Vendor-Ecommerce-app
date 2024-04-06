@@ -5,15 +5,15 @@ import SmallCards from "@/components/backoffice/SmallCards";
 import DashboardCharts from "@/components/backoffice/DashboardCharts";
 import CustomDataTable from "@/components/backoffice/CustomDataTable";
 
-function Dashboard() {
+function Page() {
     return (
-        <div className=' bg-light text-light  dark:bg-dark  dark:text-dark'>
+        <div className=' '>
 
             <Heading title="Dashboard Overview"/>
             
         {/*    large Cards*/}
             <LargeCards/>
-            
+
         {/*    small
         */}
 
@@ -24,9 +24,9 @@ function Dashboard() {
 
         {/* Data Table*/}
 
-            <CustomDataTable/>
+            {/*<CustomDataTable/>*/}
         </div>
     );
 }
 
-export default Dashboard;
+export default Page;
