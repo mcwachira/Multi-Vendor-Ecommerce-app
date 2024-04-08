@@ -1,8 +1,27 @@
 import React from 'react';
+import Heading from "@/components/backoffice/Heading";
+import Link from "next/link";
+import {Download, Plus, Search, Trash2} from "lucide-react";
+import PageHeader from "@/components/backoffice/PageHeader";
+import TableActions from "@/components/backoffice/TableActions";
 
 function Page() {
     return (
-        <div> Coupons</div>
+        <div>
+        {/* Header */}
+<PageHeader
+    title='Coupons'
+    href='/dashboard/coupons/new'
+    linkTitle="Add Coupon"/>
+
+     <TableActions/>
+
+         <div className="py-8">
+             <h2>
+                 Table
+             </h2>
+         </div>
+        </div>
     );
 }
 
