@@ -3,7 +3,7 @@
 import { Inter } from "next/font/google";
 import Sidebar from "@/components/backoffice/Sidebar";
 import Navbar from "@/components/backoffice/Navbar";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,12 +20,23 @@ export default function Layout({
 }>) {
 
     const [showSidebar, setShowSidebar] = useState(false)
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
   return (
  <div className='flex '>
    {/*sidebar*/}
 <Sidebar showSidebar={showSidebar}  setShowSidebar={setShowSidebar} />
+     {/*lg:ml-60 ml-0*/}
 
-     <div className='lg:ml-64 ml-0 flex-grow  min-h-screen bg-light text-light dark:bg-dark dark:text-dark'>
+     {/* ml-60*/}
+     <div className=' flex-grow  min-h-screen bg-light text-light dark:bg-dark dark:text-dark'>
      <Navbar setShowSidebar={setShowSidebar} showSidebar={showSidebar}/>
 
          <main className="p-8 bg-slate-50 text-light dark:bg-slate-800 dark:text-dark min-h-screen mt-16  ml-60">

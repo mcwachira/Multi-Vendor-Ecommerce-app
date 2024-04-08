@@ -5,6 +5,7 @@ import {ThemeProvider} from "@/components/providers/theme-provider";
 import {cn} from "@/lib/utils";
 
 
+
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({
               fontSans.variable
           )}
       >
+
       <ThemeProvider
           attribute="class"
           defaultTheme="system"

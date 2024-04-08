@@ -125,12 +125,12 @@ function Sidebar({setShowSidebar,showSidebar}) {
                             <div className="flex items-center space-x-3 ">
                                 <Slack/>
                                 <span>
-
+                  
                       Catalogue
                   </span>
                                 {openMenu ? <ChevronDown/>: <ChevronRight/>}
                             </div>
-
+                  
                         </button>
                     </CollapsibleTrigger>
                     <CollapsibleContent  className='rounded-xl py-3 px-3 pl-6 bg-slate-50  dark:bg-slate-800'>
