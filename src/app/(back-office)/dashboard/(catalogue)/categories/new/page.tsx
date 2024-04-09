@@ -9,6 +9,7 @@ import {generateSlug} from "@/lib/generateSlug";
 import ImageInput from "@/components/backoffice/FormComponents/ImageInput";
 import {UploadButton} from "@/utils/uploadthing";
 import {makePostRequest} from "@/lib/apiRequest";
+import SelectInput from "@/components/backoffice/FormComponents/SelectInput";
 
 
 function NewCategory() {
@@ -16,6 +17,29 @@ function NewCategory() {
 
     const [imageUrl, setImageUrl] = useState("")
     const [loading, setLoading] = useState(false)
+
+    const markets = [
+        {
+            id:1,
+            title:"Sprouts Farmers Market"
+        },
+        {
+            id: 2,
+            title: "Cabbage Farmers Market"
+        },
+        {
+            id: 3,
+            title: "Carrot Farmers Market"
+        },
+        {
+            id: 4,
+            title: "Spinach Farmers Market"
+        },
+        {
+            id: 5,
+            title: "Kale Farmers Market"
+        },
+    ]
 
     const onSubmit = async(data) => {
 
@@ -44,7 +68,18 @@ function NewCategory() {
                         label='Category Title'
                         name="title"
                         register={register}
+                        className="w-full"
                         errors={errors}/>
+
+                    <SelectInput
+                        label="Select Market"
+                        name="marketsIds"
+                       multiple={true}
+                        register={register}
+                        errors={errors}
+                        className="w-full"
+                        options={markets}
+                        />
                     <TextAreaInput
                         label='Category Description'
                         name="description"
