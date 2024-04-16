@@ -163,7 +163,7 @@ function NewProduct() {
 
                     <ToggleInput
                         label="Publish your Product"
-                        name={isActive}
+                        name="isActive"
                         trueTitle="Active"
                         falseTitle="Draft"
                         register={register}

@@ -6,16 +6,23 @@ import {useForm} from "react-hook-form";
 import SubmitButton from "@/components/backoffice/FormComponents/SubmitButton";
 import {generateCouponCode} from "@/lib/generateCouponCode";
 import {makePostRequest} from "@/lib/apiRequest";
+import ToggleInput from "@/components/backoffice/FormComponents/ToggleInput";
 
 
 //work on the coupon code
 function NewCoupon() {
-    const {register,handleSubmit,reset ,formState:{errors}} = useForm()
+    const {register,handleSubmit,reset ,watch, formState:{errors}} =  useForm({
+        defaultValues: {
+            isActive: true,
+        },
+    });
 
     const [imageUrl, setImageUrl] = useState("")
     const [loading, setLoading] = useState(false)
 
-
+//Watch it to be change off and on
+    const isActive = watch("isActive");
+    console.log(isActive)
     const onSubmit = async(data) => {
         console.log(data.expiryDate)
 
@@ -64,6 +71,13 @@ function NewCoupon() {
 
                     />
 
+                    <ToggleInput
+                        label="Publish your Coupon"
+                        name="isActive"
+                        trueTitle="Active"
+                        falseTitle="Draft"
+                        register={register}
+                    />
                     {/*<TextInput*/}
                     {/*    label='Coupon Code'*/}
                     {/*    name="code"*/}

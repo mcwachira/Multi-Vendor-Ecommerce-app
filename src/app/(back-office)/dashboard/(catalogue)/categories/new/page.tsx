@@ -10,10 +10,22 @@ import ImageInput from "@/components/backoffice/FormComponents/ImageInput";
 import {UploadButton} from "@/utils/uploadthing";
 import {makePostRequest} from "@/lib/apiRequest";
 import SelectInput from "@/components/backoffice/FormComponents/SelectInput";
+import ToggleInput from "@/components/backoffice/FormComponents/ToggleInput";
 
 
 function NewCategory() {
-    const {register,handleSubmit,reset ,formState:{errors}} = useForm()
+    const {register,handleSubmit,  reset,     watch,
+
+        formState: { errors },
+    } = useForm({
+        defaultValues: {
+            isActive: true,
+        },
+    });
+
+    //Watch it to be change off and on
+    const isActive = watch("isActive");
+    console.log(isActive)
 
     const [imageUrl, setImageUrl] = useState("")
     const [loading, setLoading] = useState(false)
@@ -91,6 +103,15 @@ function NewCategory() {
                                 imageUrl={imageUrl} setImageUrl={setImageUrl}/>
 
 
+
+
+                <ToggleInput
+                    label="Publish your Category"
+                    name="isActive"
+                    trueTitle="Active"
+                    falseTitle="Draft"
+                    register={register}
+                />
                 </div>
                 <SubmitButton isLoading={loading} buttonTitle="Create Category"
                               loadingButtonTitle="Creating Category please wait..."/>
