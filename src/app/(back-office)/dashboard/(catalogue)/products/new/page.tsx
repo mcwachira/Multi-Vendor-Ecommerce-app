@@ -12,15 +12,29 @@ import {makePostRequest} from "@/lib/apiRequest";
 import SelectInput from "@/components/backoffice/FormComponents/SelectInput";
 
 import ArrayItemsInput from "@/components/backoffice/FormComponents/ArrayItemsInput";
+import ToggleInput from "@/components/backoffice/FormComponents/ToggleInput";
 
 
 function NewProduct() {
-    const {register,handleSubmit,reset ,formState:{errors}} = useForm()
+    const {
+        register,
+        reset,
+        watch,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({
+        defaultValues: {
+            isActive: true,
+        },
+    });
 
     const [imageUrl, setImageUrl] = useState("")
     const [loading, setLoading] = useState(false)
     const [tags, setTags] = useState([])
 
+//Watch it to be change off and on
+    const isActive = watch("isActive");
+    console.log(isActive)
 
     const categories = [
         {
@@ -146,6 +160,14 @@ function NewProduct() {
 
 
                     <ArrayItemsInput setItems={setTags} items={tags} itemTitle="Tag"/>
+
+                    <ToggleInput
+                        label="Publish your Product"
+                        name={isActive}
+                        trueTitle="Active"
+                        falseTitle="Draft"
+                        register={register}
+                                            />
 
                 <SubmitButton isLoading={loading} buttonTitle="Create Product"
                               loadingButtonTitle="Creating Product please wait..."/>
